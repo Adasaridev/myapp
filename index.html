@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>CJP | Cockerose Janata Party – Latest News & Updates</title>
-    <!-- Google Fonts for refined typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (free icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>The Cockroach Chronicle – CJP News & Manifesto</title>
     <style>
         * {
             margin: 0;
@@ -16,550 +12,466 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #faf9f8;
-            color: #1e1e2a;
-            line-height: 1.5;
-            scroll-behavior: smooth;
+            background: #e8e5df;  /* aged newspaper base */
+            font-family: 'Times New Roman', 'Georgia', 'Merriweather', 'Playfair Display', serif;
+            color: #1e1b16;
+            line-height: 1.45;
+            padding: 2rem 1rem;
         }
 
-        /* container utility */
-        .container {
+        /* NEWSPAPER CONTAINER – CLASSIC BROADSHEET */
+        .newspaper {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            background: #fef9ef;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px #dac292, 0 0 0 5px #f1e5d2;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.2s;
         }
 
-        /* ========== HEADER & NAV ========== */
-        .site-header {
-            background: linear-gradient(135deg, #0b2b26 0%, #1a4a3f 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        /* TOP MASTHEAD */
+        .masthead {
+            text-align: center;
+            padding: 1.5rem 1rem 1rem 1rem;
+            border-bottom: 4px double #b87333;
+            background: #fffcf5;
         }
-
-        .header-inner {
+        .est-date {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6c4f2a;
+            font-family: 'Courier New', monospace;
+            border-top: 1px solid #d4bc8a;
+            display: inline-block;
+            padding-top: 6px;
+            margin-top: 6px;
+        }
+        .newspaper-name {
+            font-size: 4.2rem;
+            font-weight: 800;
+            font-family: 'Times New Roman', 'Georgia', serif;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #2c2418, #5a3e22);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+            margin: 0;
+        }
+        .newspaper-name small {
+            font-size: 1.8rem;
+            font-weight: normal;
+            color: #8b6946;
+        }
+        .edition {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
             justify-content: space-between;
-            gap: 1rem;
+            border-top: 1px solid #cfbc9a;
+            border-bottom: 1px solid #cfbc9a;
+            padding: 0.4rem 0.8rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-family: monospace;
+            color: #3f2f1c;
         }
 
-        .logo-area {
+        /* MAIN GRID: 2 columns + sidebar */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr 1fr;
+            gap: 1.8rem;
+            padding: 2rem 2rem 1.8rem 2rem;
+            background: #fdf8ef;
+        }
+
+        /* HEADLINES & TYPOGRAPHY */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            font-family: 'Times New Roman', serif;
+            color: #1f1a10;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            border-left: 5px solid #b1622c;
+            padding-left: 14px;
+            margin: 1rem 0 1rem 0;
+            color: #2c2418;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0.75rem 0 0.5rem;
+            color: #4f3a20;
+        }
+        .byline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8b6946;
+            border-bottom: 1px dotted #dcccaa;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 0.8rem;
+            font-family: monospace;
+        }
+        .article-text {
+            font-size: 1rem;
+            text-align: justify;
+            margin-bottom: 1rem;
+            color: #2b241c;
+        }
+        .pull-quote {
+            font-style: italic;
+            border-left: 3px solid #b87333;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-weight: 500;
+            color: #704d28;
+            background: #fbf5e8;
+            font-size: 0.95rem;
+        }
+
+        /* MANIFESTO BOX (newspaper panel) */
+        .manifesto-panel {
+            background: #f3ebdb;
+            border: 1px solid #dbbc8a;
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            box-shadow: inset 0 0 0 1px #fff8e7, 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .manifesto-panel h4 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 2px solid #ab7b49;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+        .manifesto-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .manifesto-list li {
+            margin-bottom: 0.7rem;
             display: flex;
-            align-items: center;
-            gap: 12px;
+            gap: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #ecdcaa;
+            padding-bottom: 0.5rem;
+        }
+        .manifesto-list strong {
+            color: #aa6f3c;
         }
 
-        .party-icon {
-            background: #f5b042;
-            width: 48px;
-            height: 48px;
+        /* STATS & DATA (newspaper graphic style) */
+        .stat-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 1rem 0;
+        }
+        .stat-item {
+            background: #fef7e9;
+            border: 1px solid #e2cfaa;
+            text-align: center;
+            padding: 0.6rem 0.2rem;
+            flex: 1;
+        }
+        .stat-number {
+            font-size: 1.9rem;
+            font-weight: 800;
+            font-family: 'Courier New', monospace;
+            color: #9b5a2a;
+        }
+
+        /* LEADER CARD – NEWSPAPER STYLE */
+        .leader-card {
+            background: #fff6ea;
+            border: 1px solid #cfb07a;
+            padding: 1rem;
+            margin-top: 1.2rem;
+            text-align: center;
+        }
+        .leader-img {
+            font-size: 3.6rem;
+            background: #e9dfcf;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
+            margin: 0 auto 0.6rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            color: #0b2b26;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            border: 2px solid #b87a40;
         }
-
-        .logo-text h1 {
-            font-size: 1.8rem;
+        .leader-name {
+            font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
         }
 
-        .logo-text span {
-            font-size: 0.8rem;
-            font-weight: 400;
-            opacity: 0.85;
-            display: block;
-            letter-spacing: 0.3px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.2s;
-            font-size: 1rem;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 4px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            border-bottom-color: #f5b042;
-            color: #ffe0a3;
-        }
-
-        /* ========== HERO SECTION ========== */
-        .hero {
-            background: url('https://placehold.co/1600x400/1e4d3f/ffffff?text=CJP+Newsroom') no-repeat center center/cover;
-            background-color: #14362e;
-            background-blend-mode: overlay;
-            padding: 3rem 0;
-            margin-bottom: 2rem;
-            color: white;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 1rem auto 0;
-            opacity: 0.9;
-        }
-
-        /* ========== BREAKING TICKER ========== */
-        .breaking-news {
-            background: #2d1f00;
-            background: linear-gradient(95deg, #b5432e 0%, #c95f3a 100%);
-            color: white;
-            padding: 12px 0;
-            border-radius: 40px;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .ticker {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            overflow: hidden;
-        }
-        .ticker-label {
-            background: #ffd966;
-            color: #1f2a1b;
-            font-weight: 800;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-        .ticker-content {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-weight: 500;
-            animation: scrollTicker 18s linear infinite;
-        }
-        @keyframes scrollTicker {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        .ticker-content span {
-            margin-right: 48px;
-            display: inline-block;
-        }
-        .ticker-content i {
-            margin-right: 8px;
-        }
-
-        /* ========== MAIN GRID ========== */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.25s ease;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03), 0 6px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #edece9;
-        }
-        .news-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.2);
-            border-color: #f0d89e;
-        }
-        .card-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-color: #cfd9d2;
-        }
-        .card-content {
-            padding: 1.5rem;
-        }
-        .news-category {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #b85c1a;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            background: #fff0e0;
-            padding: 2px 12px;
-            border-radius: 20px;
-        }
-        .news-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0.5rem 0 0.75rem 0;
-            line-height: 1.3;
-        }
-        .news-meta {
-            display: flex;
-            gap: 12px;
-            font-size: 0.8rem;
-            color: #6c757d;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed #e9ecef;
-            padding-bottom: 0.75rem;
-        }
-        .news-excerpt {
-            color: #2d3e3b;
-            margin-bottom: 1.25rem;
-            line-height: 1.5;
-        }
-        .read-more {
-            color: #1e6f5c;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: gap 0.2s;
-        }
-        .read-more i {
-            font-size: 0.8rem;
-        }
-        .read-more:hover {
-            gap: 10px;
-            color: #0b4638;
-        }
-
-        /* featured section */
-        .featured-section {
-            background: #f2efe7;
-            border-radius: 32px;
-            padding: 2rem;
-            margin-bottom: 3rem;
+        /* FOOTER + ADS */
+        .footer-classifieds {
+            background: #f3ecdf;
+            border-top: 2px solid #d6bc8a;
+            padding: 1rem 2rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-        .featured-content {
-            flex: 2;
-        }
-        .featured-badge {
-            background: #c94f2b;
-            color: white;
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-            display: inline-block;
-            font-weight: 600;
+            justify-content: space-between;
             font-size: 0.7rem;
-        }
-        .featured-content h2 {
-            font-size: 1.9rem;
-            margin: 0.75rem 0 0.5rem;
-        }
-        .featured-content p {
-            margin-bottom: 1.2rem;
-            color: #2f3e3a;
-        }
-        .featured-img {
-            flex: 1;
-            background: #cfba93;
-            border-radius: 28px;
-            min-height: 220px;
-            background-image: url('https://placehold.co/600x400/4a6a5e/ffffff?text=CJP+Rally');
-            background-size: cover;
-            background-position: center;
+            font-family: monospace;
+            color: #66512e;
         }
 
-        /* ========== SIDEBAR (small) – CJP INFO ========== */
-        .info-panel {
-            background: #eef3f0;
-            border-radius: 32px;
-            padding: 1.8rem;
-            margin-bottom: 2rem;
-            border-left: 8px solid #f5b042;
-        }
-        .info-panel h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .info-panel ul {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        .info-panel li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .info-panel i.fa, .info-panel i.far {
-            width: 24px;
-            color: #c2511a;
-        }
-
-        .footer {
-            background: #0c2a24;
-            color: #ddddcc;
-            padding: 2rem 0;
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 920px) {
-            .news-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .header-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero h2 {
-                font-size: 2rem;
-            }
-        }
-        @media (max-width: 640px) {
+        @media (max-width: 900px) {
             .news-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.2rem;
             }
-            .featured-section {
-                flex-direction: column;
+            .newspaper-name {
+                font-size: 2.4rem;
             }
-            .container {
-                padding: 0 18px;
+            h1 {
+                font-size: 1.8rem;
             }
+        }
+
+        /* CINEMATIC TOUCHES (but newspaper style) – subtle grain & tone */
+        .newspaper {
+            background-image: radial-gradient(circle at 20% 35%, rgba(0,0,0,0.01) 1px, transparent 1px);
+            background-size: 18px 18px;
+        }
+
+        button {
+            background: #dbbd8c;
+            border: 1px solid #9b6f3e;
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #2b2418;
+        }
+        button:hover {
+            background: #c6a16e;
+            border-color: #6a4c28;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .allegiance-toast {
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-style: italic;
+            color: #8c5f36;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2cfaa;
+            margin: 12px 0;
         }
     </style>
 </head>
 <body>
 
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo-area">
-            <div class="party-icon">
-                <i class="fas fa-dove"></i>
-            </div>
-            <div class="logo-text">
-                <h1>CJP <span style="font-weight:400;">●</span> COCKEROSE JANATA PARTY</h1>
-                <span>Nation First • Development • Unity</span>
-            </div>
+<div class="newspaper">
+    <!-- MASTHEAD: TRADITIONAL NEWSPAPER -->
+    <div class="masthead">
+        <div class="newspaper-name">
+            <small>THE</small> COCKROACH CHRONICLE <small>™</small>
         </div>
-        <div class="nav-links">
-            <a href="#" class="active">News</a>
-            <a href="#">Manifesto</a>
-            <a href="#">Leadership</a>
-            <a href="#">Join CJP</a>
-            <a href="#">Contact</a>
-        </div>
-    </div>
-</header>
-
-<!-- Hero section -->
-<section class="hero">
-    <div class="container">
-        <h2>CJP Newsroom</h2>
-        <p>Unfiltered. Unbiased. Unstoppable. Latest updates from the Cockerose Janata Party and the voice of the people.</p>
-    </div>
-</section>
-
-<div class="container">
-    <!-- BREAKING TICKER -->
-    <div class="breaking-news">
-        <div class="ticker">
-            <div class="ticker-label"><i class="fas fa-bolt"></i> BREAKING</div>
-            <div class="ticker-content">
-                <span><i class="fas fa-microphone-alt"></i> CJP announces massive farmers' welfare package in Punjab — 40% hike in MSP support</span>
-                <span><i class="fas fa-chart-line"></i> Party to release 'Vikas Sankalp Patra' on June 12th | New employment schemes</span>
-                <span><i class="fas fa-globe"></i> International diaspora meet in London draws record attendance for CJP</span>
-                <span><i class="fas fa-balance-scale"></i> Supreme Court verdict hailed by CJP: “Victory of constitutional values”</span>
-            </div>
+        <div class="est-date">EST. 2024 · RESILIENCE DAILY · VOL. I  |  SATIRICAL GAZETTE</div>
+        <div class="edition">
+            <span>🪳 SWARM EDITION</span>
+            <span>SUNDAY, 23 MAY 2026</span>
+            <span>PRICE: COURAGE</span>
         </div>
     </div>
 
-    <!-- FEATURED STORY -->
-    <div class="featured-section">
-        <div class="featured-content">
-            <span class="featured-badge"><i class="fas fa-star"></i> FEATURED STORY</span>
-            <h2>CJP unveils ‘Nav Bharat Vision 2030’ — 10 guarantees for youth & jobs</h2>
-            <p>Party president announces digital infrastructure push, 2 crore new jobs, and universal healthcare expansion. The roadmap focuses on green energy and startup ecosystem. With massive rallies expected across states, the party gears up for a transformative decade.</p>
-            <a href="#" class="read-more">Read full coverage <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="featured-img" style="background-image: url('https://placehold.co/600x400/2b6b5c/ffffff?text=CJP+Vision+Launch');"></div>
-    </div>
-
-    <!-- LATEST NEWS GRID -->
-    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 1.5rem;">
-        <h2 style="font-size: 1.8rem; font-weight: 700;"><i class="fas fa-newspaper"></i> Latest from CJP</h2>
-        <a href="#" style="color: #1e6f5c; font-weight: 500;">All news <i class="fas fa-chevron-right"></i></a>
-    </div>
-
+    <!-- MAIN NEWS GRID – LIKE A REAL NEWSPAPER LAYOUT -->
     <div class="news-grid">
-        <!-- News Card 1 -->
-        <div class="news-card">
-            <div class="card-img" style="background-image: url('https://placehold.co/800x500/92a89b/ffffff?text=CJP+Rally');"></div>
-            <div class="card-content">
-                <span class="news-category"><i class="far fa-calendar-alt"></i> POLITICS</span>
-                <h3>CJP's Jan Samvad Yatra concludes: over 5 lakh people directly engaged</h3>
-                <div class="news-meta"><span><i class="far fa-clock"></i> 2 hours ago</span> <span><i class="fas fa-user"></i> Ananya Sharma</span></div>
-                <p class="news-excerpt">The month-long outreach program in rural heartlands highlighted issues of water scarcity and education reforms. Local leaders praise party’s grassroots connection...</p>
-                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+        <!-- LEFT COLUMN: LEAD STORY -->
+        <div class="column">
+            <h1>CJP SURGES AS ‘UNDYING ALTERNATIVE’<br> <span style="font-size: 1rem;">Roach Janta Party files manifesto of survival supremacy</span></h1>
+            <div class="byline">By RADHIKA CHAUDHARY | CHIEF RESILIENCE CORRESPONDENT</div>
+            <div class="article-text">
+                <strong>NEW DELHI (CJP BUREAU)</strong> — In a stunning display of political grit, the Cockroach Janta Party today unveiled its 'Survival First' doctrine at a packed gathering. 
+                Drawing from the indomitable spirit of the cockroach, CJP national convener declared that the era of fragile politics is over. 
+                "We don't just endure crises — we inherit the earth after the storm," the party's 12-page manifesto reads.
+            </div>
+            <div class="pull-quote">
+                “हम तिलचट्टे की तरह हैं: जहाँ सब खत्म, वहाँ हम शुरू — अनंत साहस, असीम धैर्य।” — CJP Resilience Pledge
+            </div>
+            <div class="article-text">
+                The manifesto promises 'Zero Collapse Governance', decentralized swarm-based local councils, and a nationwide "Kakroach Kosh" — a contingency fund for climate, economic, or societal shocks. 
+                Political analysts note that CJP’s unique satire has resonated with youth who embrace anti-fragile ideologies.
+            </div>
+            <div class="stat-grid">
+                <div class="stat-item"><div class="stat-number">1400+</div><div>Local Roach Cells</div></div>
+                <div class="stat-item"><div class="stat-number">78%</div><div>Resilience Index ↑</div></div>
+                <div class="stat-item"><div class="stat-number">9.7M</div><div>Swarm Supporters</div></div>
             </div>
         </div>
-        <!-- News Card 2 -->
-        <div class="news-card">
-            <div class="card-img" style="background-image: url('https://placehold.co/800x500/bfae8c/ffffff?text=Economic+Summit');"></div>
-            <div class="card-content">
-                <span class="news-category"><i class="fas fa-chart-simple"></i> ECONOMY</span>
-                <h3>CJP economic cell proposes ₹5 lakh crore infrastructure stimulus</h3>
-                <div class="news-meta"><span><i class="far fa-clock"></i> Yesterday</span> <span><i class="fas fa-user"></i> Rajat Mehta</span></div>
-                <p class="news-excerpt">Focus on rural roads, digital connectivity and port modernization. The white paper will be submitted to the government for immediate action. Industry leaders welcome CJP vision.</p>
-                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+
+        <!-- MIDDLE COLUMN: MANIFESTO + OFFICIAL AGENDA -->
+        <div class="column">
+            <h2>📜 OFFICIAL AGENDA 2026</h2>
+            <div class="manifesto-panel">
+                <h4>🪳 ROACH PLEDGE · 8 RESOLVES</h4>
+                <ul class="manifesto-list">
+                    <li><strong>⚡ 1. Anti-Fragile Infrastructure:</strong> Tunnels, bunkers, and decentralized survival hubs in every district.</li>
+                    <li><strong>♻️ 2. Zero-Waste Regeneration:</strong> Convert landfills into 'Kakroach Energy Parks'.</li>
+                    <li><strong>🧠 3. Swarm Intelligence Governance:</strong> AI + public mandals for instant crisis response.</li>
+                    <li><strong>🔥 4. National Undying Pension:</strong> For every citizen who survives any disaster — CJP guarantees dignity.</li>
+                    <li><strong>🌿 5. ‘Chitin Shield’ Ecology:</strong> Bioremediation squads to clean rivers & air with organic methods.</li>
+                    <li><strong>🛡️ 6. 5-Year Resilience Draft:</strong> Mandatory self-reliance training in schools (survival skills).</li>
+                    <li><strong>🤝 7. Transparent Roach Funds:</strong> Blockchain-tracked donations, zero corruption.</li>
+                    <li><strong>🏆 8. Cockroach Ratna Samman:</strong> Highest civilian honour for extraordinary perseverance.</li>
+                </ul>
+                <div style="margin-top: 0.8rem; font-size: 0.8rem; text-align: right;">— CJP Central Committee</div>
+            </div>
+            <div class="article-text">
+                Earlier this week, CJP launched “Kakroach Chaupal” — a direct citizen feedback system inspired by the collective resilience of insect colonies.
+                Party spokesroach emphasized that satire is used as a weapon to highlight the systemic fragility of traditional political setups. 
             </div>
         </div>
-        <!-- News Card 3 -->
-        <div class="news-card">
-            <div class="card-img" style="background-image: url('https://placehold.co/800x500/7c9f8e/ffffff?text=Women+Empowerment');"></div>
-            <div class="card-content">
-                <span class="news-category"><i class="fas fa-fist-raised"></i> EMPOWERMENT</span>
-                <h3>33% reservation in party leadership: CJP announces historic gender quota</h3>
-                <div class="news-meta"><span><i class="far fa-clock"></i> 2 days ago</span> <span><i class="fas fa-user"></i> Sneha Nair</span></div>
-                <p class="news-excerpt">National executive adopts internal resolution to ensure women's representation at all levels. “This is a turning point for Indian politics,” says senior leader.</p>
-                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+
+        <!-- RIGHT COLUMN: LEADER FEATURE + ENDORSEMENTS -->
+        <div class="column">
+            <h2>🗞️ SURVIVOR-IN-CHIEF</h2>
+            <div class="leader-card">
+                <div class="leader-img">🪳👑</div>
+                <div class="leader-name">KAKROACH NARENDRA</div>
+                <div style="font-size: 0.85rem; color: #aa6f3c;">National Resilience Commander</div>
+                <div class="pull-quote" style="font-size: 0.85rem; margin-top: 10px;">
+                    “We have survived every systemic collapse — from empires to pandemics. Now, we lead.”
+                </div>
+                <div class="stat-grid" style="margin: 0.8rem 0 0;">
+                    <div class="stat-item"><span class="stat-number">∞</span><br>Survival Tenure</div>
+                    <div class="stat-item"><span class="stat-number">500+</span><br>Roach Rallies</div>
+                </div>
             </div>
-        </div>
-        <!-- News Card 4 -->
-        <div class="news-card">
-            <div class="card-img" style="background-image: url('https://placehold.co/800x500/c4b58f/ffffff?text=Education+Mission');"></div>
-            <div class="card-content">
-                <span class="news-category"><i class="fas fa-graduation-cap"></i> EDUCATION</span>
-                <h3>CJP launches 'Gyana Setu' – free coaching for competitive exams in 150 districts</h3>
-                <div class="news-meta"><span><i class="far fa-clock"></i> 3 days ago</span> <span><i class="fas fa-user"></i> Ankit Verma</span></div>
-                <p class="news-excerpt">Digital and offline mentorship for underprivileged students. The initiative aims to bridge the urban-rural gap in civil services preparation.</p>
-                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="manifesto-panel" style="margin-top: 1rem;">
+                <h4>📰 EDITORIAL: ROACH DYNAMICS</h4>
+                <div class="article-text" style="font-size: 0.9rem;">
+                    The Cockroach Janta Party isn't just satire — it's a blueprint. Their ability to frame resilience as a political strength has captured 
+                    imaginations across the country. From student unions to farmer collectives, the ‘Roach Respect’ movement is trending.
+                </div>
+                <hr>
+                <div><strong>🪳 “CJP stands for those who refuse to quit”</strong> — <em>Citizen’s Editorial</em></div>
             </div>
-        </div>
-        <!-- News Card 5 -->
-        <div class="news-card">
-            <div class="card-img" style="background-image: url('https://placehold.co/800x500/98a87c/ffffff?text=Environment+Policy');"></div>
-            <div class="card-content">
-                <span class="news-category"><i class="fas fa-leaf"></i> ENVIRONMENT</span>
-                <h3>CJP's Green Pledge: 1 crore trees plantation drive begins next month</h3>
-                <div class="news-meta"><span><i class="far fa-clock"></i> 4 days ago</span> <span><i class="fas fa-user"></i> Nidhi Joshi</span></div>
-                <p class="news-excerpt">Partnering with youth volunteers and eco-groups, CJP aims to restore forest cover in 5 states. Each village to have a 'Vriksha Panchayat'.</p>
-                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-        <!-- News Card 6 -->
-        <div class="news-card">
-            <div class="card-img" style="background-image: url('https://placehold.co/800x500/dbbe92/ffffff?text=Digital+India');"></div>
-            <div class="card-content">
-                <span class="news-category"><i class="fas fa-laptop-code"></i> TECHNOLOGY</span>
-                <h3>CJP pushes for AI governance framework & data privacy law</h3>
-                <div class="news-meta"><span><i class="far fa-clock"></i> 5 days ago</span> <span><i class="fas fa-user"></i> Karan Singh</span></div>
-                <p class="news-excerpt">Party's tech taskforce submits draft bill, advocates for ethical AI use, citizen data rights, and innovation sandboxes for startups.</p>
-                <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <!-- small call to action -->
+            <div style="margin-top: 1.2rem; text-align: center;">
+                <button id="newspaperPledgeBtn">📰 PLEDGE RESILIENCE — JOIN CJP MOVEMENT</button>
+                <div id="pledgeMessage" class="allegiance-toast" style="min-height: 2.2rem;"></div>
             </div>
         </div>
     </div>
 
-    <!-- ADDITIONAL INFO PANEL (CJP PLEDGES) -->
-    <div class="info-panel">
-        <h3><i class="fas fa-hand-peace"></i> CJP at a glance — Our Core Commitments</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
-            <ul style="flex:1;">
-                <li><i class="fas fa-check-circle"></i> 20 lakh new government jobs in 2 years</li>
-                <li><i class="fas fa-check-circle"></i> Universal health coverage – Ayushman 2.0</li>
-                <li><i class="fas fa-check-circle"></i> Interest-free loans for small farmers</li>
-            </ul>
-            <ul style="flex:1;">
-                <li><i class="fas fa-check-circle"></i> 50% reservation for women in local bodies</li>
-                <li><i class="fas fa-check-circle"></i> Zero tolerance against corruption</li>
-                <li><i class="fas fa-check-circle"></i> Doubling exports & MSME boost</li>
-            </ul>
-            <ul style="flex:1;">
-                <li><i class="fas fa-check-circle"></i> Free electricity up to 300 units for poor</li>
-                <li><i class="fas fa-check-circle"></i> Modern farming & irrigation revolution</li>
-            </ul>
+    <!-- BOTTOM NEWSPAPER SECTION: CINEMATIC + DETAILS / ROACH PILLARS -->
+    <div style="border-top: 2px solid #dcbb8a; background: #fcf7ed; padding: 1.2rem 2rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem;">
+            <div style="flex: 2; min-width: 180px;">
+                <h3 style="border-left: none; padding-left: 0; border-bottom: 1px solid #dabb8a; display: inline-block;">⚡ FOUR PILLARS OF ROACH DOCTRINE</h3>
+                <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap;">
+                    <div style="background: #efe2cf; padding: 0.5rem 0.8rem; border-radius: 30px;">🏚️ ADAPTIVE SHELTER</div>
+                    <div style="background: #efe2cf; padding: 0.5rem 0.8rem; border-radius: 30px;">🧠 SWARM INTELLIGENCE</div>
+                    <div style="background: #efe2cf; padding: 0.5rem 0.8rem; border-radius: 30px;">♻️ REGENERATIVE CYCLE</div>
+                    <div style="background: #efe2cf; padding: 0.5rem 0.8rem; border-radius: 30px;">🌍 POST-APOCALYPSE READY</div>
+                </div>
+                <div class="article-text" style="margin-top: 0.8rem; font-size: 0.85rem;">
+                    CJP's architectural vision includes 'Cockroach Corridors': subterranean rapid transit and survival shelters that double as food distribution networks during crises. 
+                    Inspired by the insect’s 300-million-year resilience blueprint.
+                </div>
+            </div>
+            <div style="flex: 1; border-left: 1px solid #e6d5b6; padding-left: 1rem;">
+                <h3 style="border-left: none;">🪳 DID YOU KNOW?</h3>
+                <div class="article-text" style="font-size: 0.85rem;">
+                    A cockroach can survive without its head for weeks. CJP's leadership model symbolizes decentralized authority — no single point of failure. 
+                    The party recently launched 'Headless Governance Trials' where decisions are made by swarm consensus.
+                </div>
+            </div>
         </div>
-        <div style="margin-top: 1.2rem; text-align: right;"><span style="background:#f5b04230; padding: 6px 14px; border-radius: 40px;"><i class="fas fa-quote-left"></i> Jai Janata, Jai Cockerose!</span></div>
     </div>
 
-    <!-- MORE NEWS HIGHLIGHTS (second row minimalist) -->
-    <div style="margin: 2rem 0 1rem;">
-        <h3 style="font-size: 1.4rem;"><i class="fas fa-bullhorn"></i> Press Briefings & Official Statements</h3>
+    <!-- NEWSPAPER FOOTER / CLASSIFIED ADS STYLE -->
+    <div class="footer-classifieds">
+        <span>📢 CJP CLASSIFIEDS: ROACH VOLUNTEERS NEEDED — JOIN NEAREST KAKROACH SABHA |  🪳 ROACH MERCHANDISE AVAILABLE: “SURVIVAL KIT” BADGES </span>
+        <span>📧 LETTERS TO THE EDITOR: resilience@cjpchronicle.in</span>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-        <div style="background: white; border-radius: 20px; padding: 1rem 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <div><i class="fas fa-file-alt" style="color:#b85c1a;"></i> <strong>CJP demands CBI probe into land scam allegations</strong> <span style="color:#6c757d; margin-left: 12px;">● National Spokesperson</span></div>
-            <span style="font-size:0.8rem; background:#f5f0ea; padding:4px 10px; border-radius: 40px;">1 hour ago</span>
-        </div>
-        <div style="background: white; border-radius: 20px; padding: 1rem 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <div><i class="fas fa-file-alt" style="color:#b85c1a;"></i> <strong>Central election committee meeting on June 18 – candidate list for assembly polls</strong></div>
-            <span style="font-size:0.8rem; background:#f5f0ea; padding:4px 10px; border-radius: 40px;">Yesterday</span>
-        </div>
-        <div style="background: white; border-radius: 20px; padding: 1rem 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <div><i class="fas fa-file-alt" style="color:#b85c1a;"></i> <strong>International Relations: CJP establishes ties with progressive parties in Europe & SE Asia</strong></div>
-            <span style="font-size:0.8rem; background:#f5f0ea; padding:4px 10px; border-radius: 40px;">3 days ago</span>
-        </div>
+    <div style="background: #eedfc9; text-align: center; padding: 0.8rem; font-size: 0.7rem; border-top: 1px solid #cfb27a; color: #795d37;">
+        © 2026 The Cockroach Chronicle — Satirical political daily for resilient citizens. CJP (Cockroach Janta Party) is a registered symbolic movement.
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
-            <div><i class="fas fa-dove"></i> <strong>Cockerose Janata Party (CJP)</strong> — सत्यमेव जयते</div>
-            <div>
-                <a href="#" style="color:#ddddcc; margin:0 10px;"><i class="fab fa-twitter"></i></a>
-                <a href="#" style="color:#ddddcc; margin:0 10px;"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" style="color:#ddddcc; margin:0 10px;"><i class="fab fa-instagram"></i></a>
-                <a href="#" style="color:#ddddcc; margin:0 10px;"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <hr style="border-color: #2f5b4e; margin: 1.5rem 0 1rem;">
-        <p>© 2025 Cockerose Janata Party – Official News Portal. All rights reserved. | For media queries: press@cjp.org.in</p>
-        <p style="margin-top: 0.5rem; font-size:0.75rem;">This is a demo news page for representational purpose only. CJP stands for people's progress.</p>
-    </div>
-</footer>
-
-<!-- tiny script for dynamic ticker speed / optional hover pause (just modern UX) -->
 <script>
-    (function() {
-        // Pause breaking news ticker on hover for readability
-        const tickerContent = document.querySelector('.ticker-content');
-        if(tickerContent) {
-            tickerContent.addEventListener('mouseenter', () => {
-                tickerContent.style.animationPlayState = 'paused';
-            });
-            tickerContent.addEventListener('mouseleave', () => {
-                tickerContent.style.animationPlayState = 'running';
-            });
+    // Interactive pledge button — neat newspaper style with message updates
+    const pledgeBtn = document.getElementById('newspaperPledgeBtn');
+    const msgDiv = document.getElementById('pledgeMessage');
+    
+    if (pledgeBtn && msgDiv) {
+        let pledgeCount = 0;
+        const pledges = [
+            "🪳 Thank you for pledging resilience! You've joined the undying swarm. 📰",
+            "⚡ Your name is now recorded in the Roach Ledger of Survival. CJP salutes you!",
+            "🔥 'Kakroach Sainik' status granted — wear it with pride. The revolution endures.",
+            "🌟 Millions of resilient citizens stand with CJP — Swarm Intelligence Activated!",
+            "🪳 The Cockroach Chronicle welcomes you. 'We never surrender, we only adapt.'",
+            "📜 You've added your voice to the manifesto. Long live the Roach Janta Party!"
+        ];
+        
+        function showPledgeMessage(text) {
+            msgDiv.style.transition = 'opacity 0.15s';
+            msgDiv.style.opacity = '0';
+            setTimeout(() => {
+                msgDiv.innerText = text;
+                msgDiv.style.opacity = '1';
+            }, 40);
+            setTimeout(() => {
+                if (msgDiv.innerText === text) {
+                    setTimeout(() => {
+                        if(msgDiv.innerText === text) msgDiv.style.opacity = '0.6';
+                    }, 2800);
+                }
+            }, 3000);
         }
-    })();
+        
+        pledgeBtn.addEventListener('click', () => {
+            pledgeCount++;
+            let selectedMsg = pledges[pledgeCount % pledges.length];
+            if (pledgeCount % 7 === 0) {
+                selectedMsg = "🏆 EXTRAORDINARY! You've been awarded 'Cockroach Ratna Samman' (Honorary). Resilience eternal! 🏆";
+            } else if (pledgeCount === 1) {
+                selectedMsg = "🪳 FIRST PLEDGE RECORDED! Welcome, pioneer of the Roach Renaissance. 📰";
+            }
+            showPledgeMessage(selectedMsg);
+            
+            // little button feedback
+            pledgeBtn.style.transform = 'scale(0.97)';
+            setTimeout(() => { pledgeBtn.style.transform = ''; }, 150);
+            
+            // optional console meme
+            console.log(`CJP Resilience Pledge #${pledgeCount} · "Cockroach spirit unbreakable"`);
+        });
+    }
+    
+    // additional vintage effect: add hover lines (just a tiny interaction for article columns)
+    const columns = document.querySelectorAll('.column');
+    columns.forEach(col => {
+        col.addEventListener('mouseenter', (e) => {
+            if(col.style.transition) return;
+            col.style.backgroundColor = '#fffcf5';
+            setTimeout(() => { col.style.backgroundColor = ''; }, 200);
+        });
+    });
 </script>
+
 </body>
 </html>
